@@ -1,17 +1,15 @@
 name: ML_Experiment
-
-conda_env: conda.yaml
-
+conda_env: env/conda.yaml
 entry_points:
   main:
     parameters:
       train_size: {type: float, default: 0.8}
       penalty: {type: str, default: "l2"}
-      C: {type: float, default: 2}
+      C: {type: float, default: 1}
       fit_intercept: {type: bool, default: False}
     command: |
-        python train.py \
-            --train_size {train_size} \
-            --penalty {penalty} \
-            --C {C} \
-            --fit_intercept {fit_intercept} \
+      python train.py \
+          --train_size {train_size} \
+          --penalty {penalty} \
+          --C {C} \
+          --fit_intercept {fit_intercept} \
