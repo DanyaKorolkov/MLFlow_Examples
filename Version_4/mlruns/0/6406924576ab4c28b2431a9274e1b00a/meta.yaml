@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/dakorolkov/Desktop/MLFlow/Version_4/mlruns/0/6406924576ab4c28b2431a9274e1b00a/artifacts
+end_time: 1742399132493
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6406924576ab4c28b2431a9274e1b00a
+run_name: unique-flea-953
+run_uuid: 6406924576ab4c28b2431a9274e1b00a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742399126384
+status: 4
+tags: []
+user_id: dakorolkov
