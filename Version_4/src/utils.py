@@ -11,11 +11,11 @@ def collect_data(train_size: float=0.8):
     return train_test_split(X,y, train_size=train_size)
 
 
-def save_model(model):
+def save_model(model, path: str="artefacts/model.pkl"):
     """
     Saving ML_Model.
     """
-    with open("artefacts/model.pkl", "wb") as file:
+    with open(path, "wb") as file:
         pickle.dump(model, file)
 
 

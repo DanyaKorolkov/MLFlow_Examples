@@ -1,3 +1,4 @@
+import os
 import mlflow
 from config import parse_args
 import numpy as np
@@ -12,8 +13,11 @@ def main():
 
     # === Collect Data ===
     X_train, X_test, y_train, y_test = collect_data(train_size=args.train_size)
-    np.save("artefacts/X_test.npy", X_test)
-    np.save("artefacts/y_test.npy", y_test)
+
+    if not os.path.exists(f"./artefacts_v4/"):
+        os.makedirs(f"./artefacts_v4/")
+    np.save(f"./artefacts_v4/X_test.npy", X_test)
+    np.save(f"./artefacts_v4/y_test.npy", y_test)
 
     # === Define Model ===
     params = {
@@ -31,7 +35,7 @@ def main():
     # === Metrics ===
     metrics: dict = collect_metrics(y_true=y_train, y_pred=y_pred)
 
-    save_model(model)
+    save_model(model, path="./artefacts_v4/model.pkl")
 
     with mlflow.start_run(run_name="Training") as run:
         
