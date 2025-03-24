@@ -25,4 +25,6 @@ MLFlow_Examples
 1. ```mlflow ui``` - поднятие локального сервсиа по адресу ```localhost:5000```. [Подробнее об архитектурах подключения](https://mlflow.org/docs/latest/tracking/#tracking_setup) и [CLI](https://mlflow.org/docs/latest/api_reference/cli.html#mlflow-server).
 2. ```mlflow.set_tracking_uri(uri=<URI>)``` - установка подключения.
 3. ```mlflow.set_experiment(<EXPERIMENT_NAME>)``` - подключение (или создание нового) эксперимента.
-4. Запуск ```mlflow run [OPRIONS] URI```, например, запускаем уже прописанный файл MLProject, лежащий в текущей директории ```mlflow run .``` 
+4. 
+    1. Заполнить файл ```main.py``` и выполнить его ```python main.py```
+    2. Либо запуск ```mlflow run [OPRIONS] URI```, например, запускаем уже прописанный файл MLProject, лежащий в текущей директории ```mlflow run .``` 
