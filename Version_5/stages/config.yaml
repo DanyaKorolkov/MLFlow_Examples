@@ -1,0 +1,10 @@
+data:
+  test:
+    X_path: null
+    y_path: null
+  train:
+    X_path: X_train.parquet
+    train_size: 0.8
+    y_path: y_train.parquet
+model_params:
+  C: 0.9

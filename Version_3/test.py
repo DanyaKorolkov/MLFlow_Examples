@@ -3,6 +3,9 @@ import pickle
 import numpy as np
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 
+mlflow.set_tracking_uri(uri="http://127.0.0.1:5000")
+mlflow.set_experiment("ML_Experiment")
+
 def collect_test_data():
     """
     Load test data.
@@ -31,7 +34,7 @@ if __name__ == "__main__":
     precision = precision_score(y_true=y_test, y_pred=y_pred, average="macro")
     recall = recall_score(y_true=y_test, y_pred=y_pred, average="macro")
 
-    with mlflow.start_run() as run:
+    with mlflow.start_run(run_name="Test") as run:
         mlflow.log_metrics({
             "accuracy": accuracy,
             "f1": f1,

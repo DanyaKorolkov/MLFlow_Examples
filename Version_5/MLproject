@@ -1,0 +1,16 @@
+name: ML_Experiment
+conda_env: env/conda.yaml
+
+entry_points:
+
+  load_train_data:
+    parameters:
+      config_path: {type: path, default: 'stages/config.yaml'}
+    command: |
+      python stages/load_train_data.py --config_path {config_path}
+
+  training:
+    parameters:
+      config_path: {type: path, default: 'stages/config.yaml'}
+    command: |
+      python stages/training.py --config_path {config_path}
